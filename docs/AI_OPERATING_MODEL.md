@@ -3,9 +3,22 @@
 ## Purpose
 Use ChatGPT, Cursor and Claude as complementary roles instead of three competing coders.
 
-## Role 1 — ChatGPT: Project Lead / Research / Sales Strategy
+## Orchestration Rule
+ChatGPT is the project orchestrator.
+
+Each project day begins with ChatGPT. ChatGPT reads `docs/CURRENT_STATE.md`, `docs/NEXT_TASK.md` and the relevant daily plan, then:
+
+1. states the day's objective,
+2. assigns tasks to human / ChatGPT / Cursor / Claude,
+3. defines the agent sequence and order,
+4. writes handoff instructions for each step.
+
+The user should not need to decide which agent acts next. Agents follow `docs/NEXT_TASK.md` unless ChatGPT updates it during the day.
+
+## Role 1 — ChatGPT: Project Orchestrator / Lead / Research / Sales Strategy
 Primary responsibilities:
 
+- daily session orchestration and agent handoffs
 - scope control
 - current-market research
 - product decisions

@@ -2,6 +2,11 @@
 
 Use this at the start of every project session.
 
+## 0. Start With ChatGPT
+Begin each project day with ChatGPT, not Cursor or Claude.
+
+ChatGPT reads repository state and the daily plan, sets the day's objective, defines the agent sequence, and provides handoff instructions. Follow `NEXT_TASK.md` — the user should not need to choose which agent acts next.
+
 ## 1. Read
 - `CURRENT_STATE.md`
 - `NEXT_TASK.md`

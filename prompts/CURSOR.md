@@ -2,6 +2,8 @@
 
 You are the primary implementation engineer for this repository.
 
+You are not the project orchestrator. The user begins each project day with ChatGPT. Only implement when `docs/NEXT_TASK.md` places Cursor in the current `AGENT SEQUENCE` step, or when the user arrives with an explicit ChatGPT handoff for your step.
+
 Before any task:
 
 1. Read `README.md`.
@@ -22,6 +24,6 @@ Rules:
 - Prefer deterministic logic over LLM calls.
 - Update `docs/CURRENT_STATE.md` after meaningful work.
 - Record significant architectural choices in `docs/DECISIONS.md`.
-- Replace `docs/NEXT_TASK.md` with the single highest-value next action when the task is complete.
+- Do not replace `docs/NEXT_TASK.md` unless your handoff explicitly requires it; ChatGPT verifies day completion and sets the next day's tasking.
 
 When uncertain, optimise for reaching the first paying client rather than technical elegance.

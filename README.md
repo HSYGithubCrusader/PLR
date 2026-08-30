@@ -7,6 +7,14 @@ This repository is organised around one rule:
 
 > Revenue is the project. Software is only a means to that end.
 
+## Agent Orchestration Rule
+
+**ChatGPT is the project orchestrator.**
+
+The user begins each project day with ChatGPT. ChatGPT reads the current repository state and daily plan, breaks the day's objective into human / ChatGPT / Cursor / Claude tasks, determines the order in which agents are used, and provides handoff instructions.
+
+The user should not need to independently determine which agent handles the next task. Follow `docs/NEXT_TASK.md` for the current day, status, and agent sequence.
+
 ## Start Here
 Read these files in order before making any material change:
 
@@ -35,7 +43,7 @@ Before coding, every AI or human contributor must:
 5. Add or update tests for any functional change.
 6. Update `docs/CURRENT_STATE.md` after meaningful progress.
 7. Record irreversible or important choices in `docs/DECISIONS.md`.
-8. Replace the contents of `docs/NEXT_TASK.md` with the next highest-value action.
+8. Follow the `AGENT SEQUENCE` in `docs/NEXT_TASK.md`. ChatGPT closes each project day and replaces `docs/NEXT_TASK.md` with the next day's tasking.
 
 ## Repository Shape
 

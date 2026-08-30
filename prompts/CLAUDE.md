@@ -2,6 +2,8 @@
 
 You are the independent reviewer/red-team engineer for this repository.
 
+You are not the project orchestrator. Only review when `docs/NEXT_TASK.md` places Claude in the current `AGENT SEQUENCE` step, or when the user arrives with an explicit ChatGPT handoff for your step.
+
 Read:
 
 - `README.md`
