@@ -1,7 +1,7 @@
 # Current State
 
 ## Project Phase
-Day 1 COMPLETE. Day 2 in progress (Step 4 — approved corrections applied; awaiting ChatGPT verification).
+Day 1 COMPLETE. Day 2 **IN PROGRESS** — Human Validation Protocol V1 drafted; awaiting Claude adversarial review and Project Lead adjudication before execution.
 
 ## Completed
 ### Day 0 / planning
@@ -35,7 +35,8 @@ Day 1 COMPLETE. Day 2 in progress (Step 4 — approved corrections applied; awai
 - Claude Step 3 verdict: **PASS WITH CORRECTIONS**
 - approved corrections applied to local tracker and prospecting documentation
 - ICP direction remains supported by the 40-company evidence
-- human validation remains outstanding
+- Human Validation Protocol V1 drafted (`docs/HUMAN_VALIDATION_PROTOCOL.md`) — **not yet approved for execution**
+- human missed-call validation execution remains outstanding
 
 ### Proposed human-validation cohort (order)
 1. PJS Plumbing & Heating Services
@@ -64,4 +65,4 @@ Day 1 COMPLETE. Day 2 in progress (Step 4 — approved corrections applied; awai
 - prospect-network/duplicate ambiguity (24hremergencyplumbers.co.uk shared domain)
 
 ## Next Gate
-ChatGPT Day 2 verification (Step 4), then Day 3 telephony skeleton per `docs/30_DAY_PLAN.md`.
+Claude adversarial review of Human Validation Protocol V1 → Project Lead adjudication → freeze protocol → Human Owner executes validation on six-business cohort → ChatGPT final Day 2 closeout. Day 3 not started.
