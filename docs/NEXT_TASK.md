@@ -4,49 +4,64 @@
 2
 
 ## PROJECT DAY STATUS
-NOT STARTED
+IN PROGRESS
 
 ## START WITH
-ChatGPT
+Human (missed-call validation) — then ChatGPT for final Day 2 closeout
 
 ## TODAY'S OBJECTIVE
 Model the customer — build an evidence-backed ICP from real UK plumbing/heating businesses.
 
+## COMPLETED
+- research completed: **40** UK plumbing/heating businesses (not 20)
+- ICP signals and software clues recorded in local `prospects.csv`
+- prospects scored and tiered (A/B/C)
+- Claude review completed: **PASS WITH CORRECTIONS**
+- approved corrections applied to local tracker and prospecting documentation
+
+## NEXT GATE
+Human validation of the six-business cohort (missed-call tests). After validation, return to **ChatGPT** for final Day 2 closeout.
+
+## HUMAN-VALIDATION COHORT (order)
+1. PJS Plumbing & Heating Services
+2. T.H.Williams Plumbing and Heating Ltd
+3. Heat365
+4. John The Plumber
+5. RM Plumbing & Electrical Ltd
+6. Matt Plumbing & Heating
+
 ## AGENT SEQUENCE
-1. ChatGPT — lead session / research plan
-2. ChatGPT + Human — customer research and prospect logging
-3. Claude — ICP evidence red-team
-4. ChatGPT — verify Day 2 completion
+1. ChatGPT — lead session / research plan — **DONE**
+2. ChatGPT + Human — customer research and prospect logging — **DONE**
+3. Claude — ICP evidence red-team — **DONE (PASS WITH CORRECTIONS)**
+4. Cursor — approved corrections — **DONE**
+5. ChatGPT — technical verification of research/review — **DONE**
+6. Human — missed-call validation on cohort — **NEXT**
+7. ChatGPT — final Day 2 closeout — **AFTER human validation**
 
 ## DO NOT
 - Begin Day 3 (telephony skeleton)
 - Build product features
 - Expand scope
-- Commit local `prospects.csv` (local-only data)
+- Commit local `prospects.csv` (local-only data; must never be committed)
+- Replace this file with Day 3 tasking until ChatGPT completes final Day 2 closeout
 
 ---
 
-## ChatGPT Handoff (Step 1)
-Confirm Day 2 is aligned with `docs/30_DAY_PLAN.md`, `docs/PROSPECTING.md`, and `docs/PROJECT.md`. Ensure the user has a local `prospects.csv` copied from `prospects.csv.example`. Define the research target (20 businesses), scoring approach, and ICP signals to capture. Provide clear instructions for Step 2.
+## Human Handoff (Step 6)
+Run missed-call validation on the six-business cohort above. Record outcomes in local `prospects.csv` only (`missed_call_followup_observed`, `owner_answers_calls`, and related notes as evidence permits). Do not commit `prospects.csv`.
 
-## ChatGPT + Human Handoff (Step 2)
-Research 20 UK plumbing/heating businesses. For each prospect, record ICP signals and software clues in local `prospects.csv` using the template schema. Apply the scoring model in `docs/PROSPECTING.md`. Tier prospects A/B/C. Do not commit `prospects.csv`.
-
-Update `docs/CURRENT_STATE.md` and set `PROJECT DAY STATUS` to reflect progress.
-
-Do not replace this file until ChatGPT verifies Day 2 completion (Step 4).
-
-## Claude Handoff (Step 3)
-Review a sample of the research evidence against `docs/PROJECT.md`, `docs/PROSPECTING.md`, and `docs/SCOPE.md`. Red-team for weak ICP signals, scoring inconsistencies, national-firm contamination, or evidence gaps. Rank findings by severity. Do not rewrite research data.
-
-## ChatGPT Handoff (Step 4)
-Verify Day 2 definition of done. Confirm the ICP is evidence-backed from real businesses. Update `docs/CURRENT_STATE.md`. Replace this file with Day 3 tasking (telephony skeleton) per `docs/30_DAY_PLAN.md`.
+## ChatGPT Handoff (Step 7)
+After human validation, verify Day 2 definition of done. Confirm the ICP is evidence-backed from real businesses and human tests. Update `docs/CURRENT_STATE.md`. Replace this file with Day 3 tasking (telephony skeleton) per `docs/30_DAY_PLAN.md`.
 
 ## Definition of Done
-- 20 UK plumbing/heating businesses researched
+- 40 UK plumbing/heating businesses researched
 - ICP signals and software clues recorded in local `prospects.csv`
 - prospects scored and tiered (A/B/C)
+- Claude review completed (PASS WITH CORRECTIONS)
+- approved corrections applied
 - evidence supports or refines the initial ICP in `docs/PROJECT.md`
+- human missed-call validation completed on the six-business cohort
 - `docs/CURRENT_STATE.md` updated
-- Claude review completed
-- next task points to Day 3 telephony foundation
+- ChatGPT final Day 2 closeout completed
+- next task points to Day 3 telephony foundation (only after Step 7)
