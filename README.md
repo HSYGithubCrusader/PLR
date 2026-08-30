@@ -57,6 +57,9 @@ Before coding, every AI or human contributor must:
 
 Do not create additional top-level directories unless there is a concrete need.
 
+## Prospect Tracker
+`prospects.csv.example` is the committed template (header/schema only). Copy it to `prospects.csv` for local prospect data. The real `prospects.csv` is local-only and must not be committed.
+
 ## Technology Direction
 Initial production direction:
 

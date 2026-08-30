@@ -1,7 +1,7 @@
 # Current State
 
 ## Project Phase
-Day 1 — repository baseline (Cursor Step 2 complete).
+Day 1 — repository baseline (Cursor Step 4 complete; awaiting ChatGPT verification).
 
 ## Completed
 - niche selected: UK plumbing/heating
@@ -19,6 +19,8 @@ Day 1 — repository baseline (Cursor Step 2 complete).
 - pytest test skeleton under `/tests` with health endpoint coverage
 - `requirements.txt` dependency configuration
 - `.gitignore` and `.env.example` verified for secret/environment hygiene
+- Claude Step 3 review completed
+- Step 4 corrections applied: prospect tracker template/local split, public API docs disabled, test skeleton cleanup
 
 ## Not Yet Built
 - database schema/migrations
@@ -38,4 +40,4 @@ Day 1 — repository baseline (Cursor Step 2 complete).
 - insufficient compliance checks before scaled outreach
 
 ## Next Gate
-Claude scope red-team (Day 1 Step 3), then Cursor approved corrections (Step 4), then ChatGPT Day 1 verification (Step 5).
+ChatGPT Day 1 verification (Step 5).
