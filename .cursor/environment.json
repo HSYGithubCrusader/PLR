@@ -1,0 +1,14 @@
+{
+  "name": "Plumber Lead Recovery",
+  "install": "sudo apt-get update -qq && sudo apt-get install -y -qq python3.12-venv && python3 -m venv .venv && .venv/bin/pip install --upgrade pip && .venv/bin/pip install -r requirements.txt",
+  "terminals": [
+    {
+      "name": "api",
+      "command": ".venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload",
+      "description": "FastAPI dev server for the Plumber Lead Recovery service. Health check: GET http://localhost:8000/health"
+    }
+  ],
+  "ports": [
+    { "name": "api", "port": 8000 }
+  ]
+}
