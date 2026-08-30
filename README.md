@@ -60,7 +60,11 @@ Do not create additional top-level directories unless there is a concrete need.
 ## Prospect Tracker
 `prospects.csv.example` is the committed template (header/schema only). Copy it to `prospects.csv` for local prospect data. The real `prospects.csv` is local-only and must not be committed.
 
+`suppression.csv.example` is the committed suppression-list template. Copy it to `suppression.csv` for local do-not-contact records. The real `suppression.csv` is local-only and must not be committed.
+
 Field definitions for `online_booking`, receptionist penalty, and `owner_answers_calls` are in `docs/PROSPECTING.md`.
+
+Human validation protocol: `docs/HUMAN_VALIDATION_PROTOCOL.md` (V2 frozen).
 
 ## Technology Direction
 Initial production direction:

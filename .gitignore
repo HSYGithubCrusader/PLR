@@ -23,6 +23,7 @@ Thumbs.db
 logs/
 *.sqlite3
 prospects.csv
+suppression.csv
 
 # Build
 build/

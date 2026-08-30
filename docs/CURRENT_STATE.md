@@ -1,7 +1,7 @@
 # Current State
 
 ## Project Phase
-Day 1 COMPLETE. Day 2 **IN PROGRESS** — Human Validation Protocol V1 drafted; awaiting Claude adversarial review and Project Lead adjudication before execution.
+Day 1 COMPLETE. Day 2 **IN PROGRESS** — Human Validation Protocol V2 frozen; awaiting Human Owner execution.
 
 ## Completed
 ### Day 0 / planning
@@ -32,13 +32,16 @@ Day 1 COMPLETE. Day 2 **IN PROGRESS** — Human Validation Protocol V1 drafted; 
 ### Day 2 — Model the customer (in progress)
 - deep research expanded sample from 20 to 40 UK plumbing/heating businesses (local `prospects.csv`, not committed)
 - geographic spread: London plus Manchester, Birmingham, Leeds, Liverpool, Bristol, Glasgow, Sheffield, Newcastle, Cardiff, Edinburgh, Nottingham
-- Claude Step 3 verdict: **PASS WITH CORRECTIONS**
+- Claude ICP evidence review: **PASS WITH CORRECTIONS**
 - approved corrections applied to local tracker and prospecting documentation
 - ICP direction remains supported by the 40-company evidence
-- Human Validation Protocol V1 drafted (`docs/HUMAN_VALIDATION_PROTOCOL.md`) — **not yet approved for execution**
-- human missed-call validation execution remains outstanding
+- Human Validation Protocol V1 drafted; Claude protocol review: **PASS WITH CORRECTIONS**
+- Project Lead adjudication complete (D-008)
+- **Human Validation Protocol V2 frozen** (`docs/HUMAN_VALIDATION_PROTOCOL.md`) — approved for Human Owner execution
+- local suppression list template (`suppression.csv.example`); real `suppression.csv` gitignored
+- human commercial-discovery + missed-call validation **execution outstanding**
 
-### Proposed human-validation cohort (order)
+### Human-validation cohort (order)
 1. PJS Plumbing & Heating Services
 2. T.H.Williams Plumbing and Heating Ltd
 3. Heat365
@@ -53,7 +56,7 @@ Day 1 COMPLETE. Day 2 **IN PROGRESS** — Human Validation Protocol V1 drafted; 
 - P0 product features (missed-call recovery, SMS, etc.)
 - demo
 - active outreach
-- human missed-call validation on proposed cohort
+- human validation execution on cohort
 
 ## Current Risks
 - scope creep
@@ -65,4 +68,4 @@ Day 1 COMPLETE. Day 2 **IN PROGRESS** — Human Validation Protocol V1 drafted; 
 - prospect-network/duplicate ambiguity (24hremergencyplumbers.co.uk shared domain)
 
 ## Next Gate
-Claude adversarial review of Human Validation Protocol V1 → Project Lead adjudication → freeze protocol → Human Owner executes validation on six-business cohort → ChatGPT final Day 2 closeout. Day 3 not started.
+Human Owner executes Day 2 Commercial Discovery + Missed-Call Validation Protocol V2 on the six-business cohort → results return to Project Lead for final Day 2 verification. **Day 3 not started.**

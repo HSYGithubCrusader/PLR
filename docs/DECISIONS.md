@@ -45,3 +45,16 @@ Reasoning:
 - Flask would be sufficient for a health endpoint alone but offers no advantage for the webhook-heavy path already specified.
 
 Scope of this decision: framework choice and minimal app skeleton only. No Twilio, PostgreSQL, or product logic is introduced.
+
+## D-008 — Day 2 calls are commercial discovery + validation
+Status: Accepted
+
+The Day 2 human-validation calls are **commercial discovery + validation**, not laboratory-style pure research.
+
+The caller must be transparent that the research concerns a system being built for small plumbing businesses. Required opening:
+
+> "Hi, I'm Francisco. I'm researching a system I'm building for small plumbing businesses around missed customer enquiries. Could I ask you one quick question about how you currently handle them?"
+
+If organic interest develops, the caller may continue a commercial conversation. Do not force a pitch merely because the business answered.
+
+Recorded in Human Validation Protocol V2 (`docs/HUMAN_VALIDATION_PROTOCOL.md`).
