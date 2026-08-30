@@ -1,116 +1,113 @@
 # AI Operating Model
 
 ## Purpose
-Use ChatGPT, Cursor and Claude as complementary roles instead of three competing coders.
+Use ChatGPT/OpenAI/Codex, Cursor, and Claude as complementary roles with explicit authority — not three competing coders.
 
-## Orchestration Rule
-ChatGPT is the project orchestrator.
-
-Each project day begins with ChatGPT. ChatGPT reads `docs/CURRENT_STATE.md`, `docs/NEXT_TASK.md` and the relevant daily plan, then:
-
-1. states the day's objective,
-2. assigns tasks to human / ChatGPT / Cursor / Claude,
-3. defines the agent sequence and order,
-4. writes handoff instructions for each step.
-
-The user should not need to decide which agent acts next. Agents follow `docs/NEXT_TASK.md` unless ChatGPT updates it during the day.
-
-## Role 1 — ChatGPT: Project Orchestrator / Lead / Research / Sales Strategy
-Primary responsibilities:
-
-- daily session orchestration and agent handoffs
-- scope control
-- current-market research
-- product decisions
-- prioritisation
-- prospect scoring
-- pricing
-- outreach strategy
-- objection analysis
-- demo structure
-- funnel diagnosis
-- deciding whether a proposed feature advances revenue
-
-ChatGPT should not routinely write large implementation patches when Cursor can work directly inside the repository.
-
-### Typical ChatGPT question
-“What is the highest-value next action toward the first paying client given CURRENT_STATE, NEXT_TASK and the latest sales evidence?”
-
-## Role 2 — Cursor: Primary Builder
-Primary responsibilities:
-
-- implement scoped tasks
-- write tests
-- fix defects
-- integrate APIs
-- update schema/migrations
-- maintain repo consistency
-
-Before each task Cursor must read:
-
-- `README.md`
-- `docs/SCOPE.md`
-- `docs/BUILD_RULES.md`
-- `docs/CURRENT_STATE.md`
-- `docs/NEXT_TASK.md`
-
-Cursor must not add P1/P2 functionality unless the task explicitly satisfies the scope gate.
-
-### Preferred task style
-“Implement X according to the repo docs. Write tests. Do not modify unrelated code. Update CURRENT_STATE and NEXT_TASK.”
-
-## Role 3 — Claude: Reviewer / Red Team
-Primary responsibilities:
-
-- code review
-- architecture review
-- security review
-- edge cases
-- test design
-- adversarial conversation testing
-- identifying hidden assumptions
-- critiquing sales copy/offers when requested
-
-Claude should review completed or proposed work rather than independently rebuild the same feature.
-
-### Typical Claude task
-“Review the current diff against SCOPE, BUILD_RULES and ARCHITECTURE. Find defects, unsafe assumptions, missing tests and unnecessary complexity. Rank findings by severity. Do not rewrite the entire system.”
-
-## Default Workflow
+## Authority hierarchy
 
 ```text
-ChatGPT defines/validates next task
-            |
-            v
-Cursor implements + tests
-            |
-            v
-Claude reviews / attacks
-            |
-            v
-Cursor fixes legitimate issues
-            |
-            v
-ChatGPT checks business value / next priority
+Human Owner
+    ↓
+ChatGPT / OpenAI / Codex — Project Lead (rationality layer)
+    ↓
+Cursor — Implementation Agent
+    ↓
+Claude — Adversarial Reviewer / Red-Team
+    ↓
+ChatGPT / OpenAI / Codex — adjudication
+    ↓
+approved corrections → Cursor
+OR next task
+OR human escalation
 ```
 
-## Suggested Effort Split During Build Week
+**Explicit rule:** Claude reviews → Project Lead adjudicates → Cursor implements approved changes.
+
+Claude must never automatically order Cursor changes.
+
+Cursor must never independently redefine scope or decide the next project objective.
+
+When Codex acts autonomously for PLR, it inherits the Project Lead role defined in `prompts/CHATGPT.md`.
+
+Do not assume ChatGPT Plus, Claude, or Cursor subscriptions provide interchangeable API credits.
+
+## Canonical loop
+
+1. **Human Owner** — sets constraints, approves escalations, performs actions agents cannot (contact, spend, deploy).
+2. **Project Lead** — reads repo state, sets bounded tasks, protects scope, judges work against `PAYING_CLIENTS >= 1`.
+3. **Cursor** — implements approved changes, runs tests, reports results.
+4. **Claude** — red-teams implementation and evidence; ranks findings; proposes smallest corrections only.
+5. **Project Lead** — adjudicates Claude findings independently; accepts, rejects, or modifies recommendations.
+6. **Cursor** (if needed) — applies only pre-approved corrections.
+7. **Project Lead** — advances gate, sets next task, or escalates to human.
+
+Project Lead participates after every meaningful implementation/review unit, not merely at the start of a day.
+
+## Role summaries
+
+### Project Lead — ChatGPT / OpenAI / Codex
+See `prompts/CHATGPT.md`.
+
+Orchestration, scope protection, prioritisation, adjudication, gate advancement, human escalation.
+
+### Implementation Agent — Cursor
+See `prompts/CURSOR.md`.
+
+Bounded implementation, tests, in-scope bug fixes, result reporting.
+
+### Adversarial Reviewer — Claude
+See `prompts/CLAUDE.md`.
+
+Independent review and red-team; no implementation, no scope control, no gate advancement.
+
+## Persistent handoff mechanism
+
+Repository state is the shared memory. Conversational memory must **not** be required for an agent to understand project state.
+
+Primary handoff artifacts:
+
+- `docs/CURRENT_STATE.md` — what is done, what is not, current phase and gates
+- `docs/NEXT_TASK.md` — current day, agent sequence, handoff instructions
+- `docs/DECISIONS.md` — settled choices
+- tests, commits, and PRs — evidence of implementation quality
+
+If a decision matters tomorrow, put it in the repo.
+
+## Human escalation conditions
+
+Escalate to the human owner when any of the following apply:
+
+- material scope change
+- core offer, ICP, or pricing change
+- spending money
+- prospect or customer contact
+- production deployment or destructive operation
+- credentials or secrets handling
+- meaningful legal or compliance uncertainty
+- changing settled architecture (record in `docs/DECISIONS.md` after human approval)
+- material agent disagreement (e.g. Project Lead and Claude reach incompatible conclusions)
+- repeated failed correction loop
+- overriding an explicit human decision
+
+## Autonomy without human intervention
+
+Agents may continue **without** human escalation for:
+
+- already-approved bounded implementation
+- running tests and fixing obvious failures inside approved scope
+- obvious in-scope bug fixes explicitly assigned in `docs/NEXT_TASK.md`
+- approved reviewer corrections after Project Lead adjudication
+
+## Suggested effort split during build week
 
 - Cursor: ~50%
-- ChatGPT: ~30%
+- Project Lead: ~30%
 - Claude: ~20%
 
-## Suggested Effort Split After Day 7
+## Suggested effort split after Day 7
 
 Human sales dominates.
 
-- ChatGPT: sales/funnel/strategy
+- Project Lead: sales/funnel/strategy
 - Cursor: bugs only or prospect-required changes
 - Claude: review/demo red-team only
-
-## Shared Context Rule
-The repository is the shared memory.
-
-Do not rely on any model remembering unstored decisions.
-
-If a decision matters tomorrow, put it in the repo.
