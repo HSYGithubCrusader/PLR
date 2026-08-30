@@ -1,7 +1,7 @@
 # Current State
 
 ## Project Phase
-Day 1 COMPLETE. Day 2 not started.
+Day 1 COMPLETE. Day 2 in progress (Step 4 — approved corrections applied; awaiting ChatGPT verification).
 
 ## Completed
 ### Day 0 / planning
@@ -29,14 +29,30 @@ Day 1 COMPLETE. Day 2 not started.
 - Step 4 corrections applied
 - ChatGPT Step 5 verification: Day 1 approved complete
 
+### Day 2 — Model the customer (in progress)
+- deep research expanded sample from 20 to 40 UK plumbing/heating businesses (local `prospects.csv`, not committed)
+- geographic spread: London plus Manchester, Birmingham, Leeds, Liverpool, Bristol, Glasgow, Sheffield, Newcastle, Cardiff, Edinburgh, Nottingham
+- Claude Step 3 verdict: **PASS WITH CORRECTIONS**
+- approved corrections applied to local tracker and prospecting documentation
+- ICP direction remains supported by the 40-company evidence
+- human validation remains outstanding
+
+### Proposed human-validation cohort (order)
+1. PJS Plumbing & Heating Services
+2. T.H.Williams Plumbing and Heating Ltd
+3. Heat365
+4. John The Plumber
+5. RM Plumbing & Electrical Ltd
+6. Matt Plumbing & Heating
+
 ## Not Yet Built
 - database schema/migrations
 - Twilio integration
 - qualification state machine
 - P0 product features (missed-call recovery, SMS, etc.)
 - demo
-- populated prospect database (Day 2 work)
 - active outreach
+- human missed-call validation on proposed cohort
 
 ## Current Risks
 - scope creep
@@ -45,6 +61,7 @@ Day 1 COMPLETE. Day 2 not started.
 - treating AI subscriptions as production API access
 - weak outreach volume
 - insufficient compliance checks before scaled outreach
+- prospect-network/duplicate ambiguity (24hremergencyplumbers.co.uk shared domain)
 
 ## Next Gate
-Day 2 — model the customer: research 20 UK plumbing/heating businesses and build evidence-backed ICP. Begin with ChatGPT (Step 1).
+ChatGPT Day 2 verification (Step 4), then Day 3 telephony skeleton per `docs/30_DAY_PLAN.md`.

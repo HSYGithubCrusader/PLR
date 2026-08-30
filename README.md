@@ -60,6 +60,8 @@ Do not create additional top-level directories unless there is a concrete need.
 ## Prospect Tracker
 `prospects.csv.example` is the committed template (header/schema only). Copy it to `prospects.csv` for local prospect data. The real `prospects.csv` is local-only and must not be committed.
 
+Field definitions for `online_booking`, receptionist penalty, and `owner_answers_calls` are in `docs/PROSPECTING.md`.
+
 ## Technology Direction
 Initial production direction:
 

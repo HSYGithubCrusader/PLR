@@ -31,11 +31,28 @@ receptionist_signal
 job_management_software_signal
 missed_call_followup_observed
 score
+tier
 status
 last_contacted
 next_action
+owner_answers_calls
 notes
 ```
+
+### Field definitions (operational)
+
+**`online_booking`**
+
+- `yes` — self-service appointment or callout scheduling (customer can book without human confirmation).
+- `no` — quote form, callback request, contact form, or appointment request that requires human confirmation.
+
+**`receptionist_signal` / receptionist penalty**
+
+Apply the `-5 obvious receptionist/call centre` scoring penalty only when there is clear evidence of a dedicated receptionist, answering bureau, customer control centre, or call centre. “Available/open 24/7” alone does not qualify.
+
+**`owner_answers_calls`**
+
+Evidence-only field (`yes` / `no` / `unknown`). Records whether the owner/operator is evidenced as answering inbound calls. No scoring weight.
 
 ## Initial Scoring Model
 
