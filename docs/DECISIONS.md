@@ -31,3 +31,17 @@ Use LLM capabilities only where they materially improve messy-language understan
 Status: Accepted
 
 n8n may be used for prototyping. Production direction is lightweight Python + PostgreSQL unless client-specific deployment/licensing justifies otherwise.
+
+## D-007 — FastAPI for the initial Python web service
+Status: Accepted
+
+FastAPI chosen over Flask for the Day 1 repository baseline.
+
+Reasoning:
+
+- Architecture centres on Twilio webhooks and structured JSON payloads; FastAPI provides first-class request/response validation via Pydantic with minimal boilerplate.
+- Built-in async support suits inbound webhook handling without adding framework complexity later.
+- `TestClient` integrates cleanly with pytest for the Day 1 health-check test.
+- Flask would be sufficient for a health endpoint alone but offers no advantage for the webhook-heavy path already specified.
+
+Scope of this decision: framework choice and minimal app skeleton only. No Twilio, PostgreSQL, or product logic is introduced.

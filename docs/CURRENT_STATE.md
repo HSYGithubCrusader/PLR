@@ -1,7 +1,7 @@
 # Current State
 
 ## Project Phase
-Day 0 / repository bootstrap.
+Day 1 — repository baseline (Cursor Step 2 complete).
 
 ## Completed
 - niche selected: UK plumbing/heating
@@ -12,15 +12,21 @@ Day 0 / repository bootstrap.
 - sales and prospecting strategy documented
 - 30-day execution plan documented
 - AI role separation defined
+- ChatGPT orchestration model documented
+- FastAPI chosen as web framework (D-007)
+- minimal runnable app skeleton under `/app`
+- health-check endpoint at `GET /health`
+- pytest test skeleton under `/tests` with health endpoint coverage
+- `requirements.txt` dependency configuration
+- `.gitignore` and `.env.example` verified for secret/environment hygiene
 
 ## Not Yet Built
-- application code
 - database schema/migrations
 - Twilio integration
 - qualification state machine
-- tests
+- P0 product features (missed-call recovery, SMS, etc.)
 - demo
-- prospect database
+- populated prospect database
 - active outreach
 
 ## Current Risks
@@ -32,4 +38,4 @@ Day 0 / repository bootstrap.
 - insufficient compliance checks before scaled outreach
 
 ## Next Gate
-Complete Day 1: freeze implementation choices and create the initial app/test skeleton without adding features beyond P0.
+Claude scope red-team (Day 1 Step 3), then Cursor approved corrections (Step 4), then ChatGPT Day 1 verification (Step 5).
