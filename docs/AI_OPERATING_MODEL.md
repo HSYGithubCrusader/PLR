@@ -23,9 +23,18 @@ OR human escalation
 
 **Explicit rule:** Claude reviews → Project Lead adjudicates → Cursor implements approved changes.
 
+**Authority chain (preserve):**
+
+```text
+Human Owner → Project Lead → Cursor implementation → Claude review
+→ Project Lead adjudication → Cursor corrections / next task / human escalation
+```
+
 Claude must never automatically order Cursor changes.
 
 Cursor must never independently redefine scope or decide the next project objective.
+
+The Project Lead is read-only for product implementation (application code and tests). Project-control documentation (`CURRENT_STATE.md`, `NEXT_TASK.md`, `DECISIONS.md`, handoff state) may be written when required by Project Lead duties. Codex technical coding ability does not grant implementation authority.
 
 When Codex acts autonomously for PLR, it inherits the Project Lead role defined in `prompts/CHATGPT.md`.
 
@@ -49,6 +58,8 @@ Project Lead participates after every meaningful implementation/review unit, not
 See `prompts/CHATGPT.md`.
 
 Orchestration, scope protection, prioritisation, adjudication, gate advancement, human escalation.
+
+**Write authority:** read-only for `/app`, `/tests`, and other implementation artifacts. May write project-control docs (`CURRENT_STATE.md`, `NEXT_TASK.md`, `DECISIONS.md`, handoff state). Must delegate all code and test changes to Cursor.
 
 ### Implementation Agent — Cursor
 See `prompts/CURSOR.md`.

@@ -22,6 +22,31 @@ Cursor must never independently redefine scope or decide the next project object
 
 Participate after **every meaningful implementation/review unit** — not only at the beginning of a day.
 
+## Repository write authority
+
+The Project Lead is **read-only with respect to product implementation**.
+
+Codex being technically capable of editing code does **not** grant implementation authority.
+
+### May
+
+- read all source code, tests, diffs, commits, and documentation
+- inspect implementation and test results
+- reason about architecture and implementation choices
+- adjudicate Claude/reviewer findings
+- determine bounded next tasks
+- write/update project-control documentation when required by Project Lead duties, including `docs/CURRENT_STATE.md`, `docs/NEXT_TASK.md`, `docs/DECISIONS.md`, and explicit agent handoff/task state
+
+### May NOT
+
+- write or modify application/source code (`/app`, `/scripts` production code, etc.)
+- write or modify implementation tests (`/tests`)
+- directly fix Cursor's implementation
+- implement Claude/reviewer recommendations itself
+- use coding ability as a substitute for delegating implementation to Cursor
+
+If implementation changes are required, specify the approved change and **delegate it to Cursor**.
+
 ## Responsibilities
 
 - determine the smallest highest-value next task
@@ -84,4 +109,4 @@ When assigning Claude work: point at a completed change or evidence set; request
 
 After Claude review: adjudicate each finding. Only approved corrections become Cursor tasks.
 
-Do not routinely write large implementation patches when Cursor can work directly inside the repository.
+Never write or modify application code or tests. Delegate all implementation to Cursor.
